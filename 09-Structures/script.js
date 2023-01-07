@@ -27,51 +27,103 @@ const restaurant = {
     },
     orderDelivery: function ({starterIndex,mainIndex,time,address}){
         console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} to ${address} at ${time} `)
-    }
+    },
+
+    orderPasta: function(ing1, ing2, ing3){
+        console.log(`Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3} `);
+    },
 };
   
-restaurant.orderDelivery({
-    time: '22:30',
-    address: 'HaNoi',
-    mainIndex: 2,
-    starterIndex: 2,
-});
+const arr = [7,8,9]
+const newbadArray = [1,2,arr[0],arr[1],arr[2]]
+
+const newArray = [1,2, ...arr];
+console.log(newArray);
+
+console.log(newArray);
+console.log(...newArray);
+
+const newMenu = [...restaurant.mainMenu, "Gnocci"];
+console.log(newMenu);
+
+// Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Join 2 array
+
+const menu = [...restaurant.starterMenu,...restaurant.mainMenu]
+console.log(menu)
+
+// Iterables: array, string, maps, sets. Not object
+const str = 'Jonas';
+const letters = [...str,' ','S.'];
+console.log(letters);
+console.log(...str);
+
+// Vai Vd thuc
+const ingredients = [
+    // prompt("Let's make pasta! Ingredinets 1 ?"),
+    // prompt("Ingredinets 2 ?"),
+    // prompt("Ingredinets 3 ?")
+]
+
+restaurant.orderPasta(...ingredients);
+
+// Objects
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: "Huy Nguyen" }
+console.log(newRestaurant);
+
+const restaurantCopy = {...restaurant}
+restaurantCopy.name = "Cricle K"
+console.log(restaurantCopy.name);
+console.log(restaurant.name)
 
 
-const { name , openingHours, categories } = restaurant;
-console.log( name, openingHours, categories);
-
-const {
-    name: restaurantName,
-    openingHours: hours,
-    categories: tags,
-} = restaurant;
-console.log(restaurantName, hours, tags);
-
-// // Default value
-const { menu = [], starterMenu: starters = [] } = restaurant;
-console.log(menu, starters);
-
-// // Chuyen doi cac bien
-let a = 111;
-let b = 999;
-const obj = { a:21 , b:7, c:14 };
-({ a, b} = obj);
-console.log(a, b);
-
-// // Cách lấy giá trị của mảng lồng nhau
-const {
-    fri: {
-        open: o,
-        close: c,
-    }
-} = openingHours;
-console.log(o , c);
 
 
 
 
 
+
+
+// // Destructring Objects
+// restaurant.orderDelivery({
+//     time: '22:30',
+//     address: 'HaNoi',
+//     mainIndex: 2,
+//     starterIndex: 2,
+// });
+
+
+// const { name , openingHours, categories } = restaurant;
+// console.log( name, openingHours, categories);
+
+// const {
+//     name: restaurantName,
+//     openingHours: hours,
+//     categories: tags,
+// } = restaurant;
+// console.log(restaurantName, hours, tags);
+
+// // // Default value
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
+
+// // // Chuyen doi cac bien
+// let a = 111;
+// let b = 999;
+// const obj = { a:21 , b:7, c:14 };
+// ({ a, b} = obj);
+// console.log(a, b);
+
+// // // Cách lấy giá trị của mảng lồng nhau
+// const {
+//     fri: {
+//         open: o,
+//         close: c,
+//     }
+// } = openingHours;
+// console.log(o , c);
 
 
 
