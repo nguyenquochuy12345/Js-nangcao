@@ -40,37 +40,89 @@ const restaurant = {
 
 };
 
-  
-// SPREAD, becase on RIGHT side of =
-const arr = [1,2, ...[3,4]];
+//  Use Any data type, return ANY data type, short-ciruiting
+console.log('---- OR ----');
+console.log(3 || 'Huy' );
+console.log('' || 'Huy' );
+console.log(true || 0 );
+console.log(undefined || null );
 
-// REST, because on LEFT side of =
-const [a,b, ...others] = [1,2,3,4,5];
-console.log(a,b, others);
+console.log(undefined || 0 || '' || 'Huy' || 20 || null);
 
-const [pizza , ,risotto, ...otherFood ] = [...restaurant.mainMenu, ...restaurant.starterMenu]
-console.log(pizza,risotto,otherFood)
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
 
-// Object
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
 
-// Functions
-const add = function (...number){
-    let sum = 0;
-    for(let i = 0; i < number.length; i++ ) sum+=number[i]
-    console.log(sum);
+console.log('---- AND ----');
+console.log(3 && 'Huy' );
+console.log(0 && 'Huy' );
 
+console.log(23 && "Huy" && false && 21 );
+if( restaurant.orderPizza){
+    restaurant.orderPizza('Khong thit', 'Co thit')
 }
-add(2,3,5);
-add(12,3,5,8);
-add(2,32,5,3,5);
-const x = [9,10,11];
-add(...x);
+restaurant.orderPizza && restaurant.orderPizza('Khong thit', 'Co thit')
 
 
-restaurant.orderPizza('mushroom','onion', 'olives', 'spinach' );
-restaurant.orderPizza('mushroom');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ///////////////////////////////////////////////////////
+// // SPREAD, becase on RIGHT side of =
+// const arr = [1,2, ...[3,4]];
+
+// // REST, because on LEFT side of =
+// const [a,b, ...others] = [1,2,3,4,5];
+// console.log(a,b, others);
+
+// const [pizza , ,risotto, ...otherFood ] = [...restaurant.mainMenu, ...restaurant.starterMenu]
+// console.log(pizza,risotto,otherFood)
+
+// // Object
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
+
+// // Functions
+// const add = function (...number){
+//     let sum = 0;
+//     for(let i = 0; i < number.length; i++ ) sum+=number[i]
+//     console.log(sum);
+
+// }
+// add(2,3,5);
+// add(12,3,5,8);
+// add(2,32,5,3,5);
+// const x = [9,10,11];
+// add(...x);
+
+
+// restaurant.orderPizza('mushroom','onion', 'olives', 'spinach' );
+// restaurant.orderPizza('mushroom');
 
 
 
