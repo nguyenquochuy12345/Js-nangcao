@@ -40,50 +40,44 @@ const restaurant = {
 
 };
 
-//  Use Any data type, return ANY data type, short-ciruiting
-console.log('---- OR ----');
-console.log(3 || 'Huy' );
-console.log('' || 'Huy' );
-console.log(true || 0 );
-console.log(undefined || null );
-
-console.log(undefined || 0 || '' || 'Huy' || 20 || null);
-
-restaurant.numGuests = 23;
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
-
+restaurant.numGuests = 0;
 const guests2 = restaurant.numGuests || 10;
 console.log(guests2);
 
-console.log('---- AND ----');
-console.log(3 && 'Huy' );
-console.log(0 && 'Huy' );
-
-console.log(23 && "Huy" && false && 21 );
-if( restaurant.orderPizza){
-    restaurant.orderPizza('Khong thit', 'Co thit')
-}
-restaurant.orderPizza && restaurant.orderPizza('Khong thit', 'Co thit')
+// Nullish : null and undefined (NOT 0 and '')
+const guests3 = restaurant.numGuests ?? 10;
+console.log(guests3);
 
 
 
 
 
 
+// //  Use Any data type, return ANY data type, short-ciruiting
+// console.log('---- OR ----');
+// console.log(3 || 'Huy' );
+// console.log('' || 'Huy' );
+// console.log(true || 0 );
+// console.log(undefined || null );
 
+// console.log(undefined || 0 || '' || 'Huy' || 20 || null);
 
+// restaurant.numGuests = 23;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
 
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
 
+// console.log('---- AND ----');
+// console.log(3 && 'Huy' );
+// console.log(0 && 'Huy' );
 
-
-
-
-
-
-
-
-
+// console.log(23 && "Huy" && false && 21 );
+// if( restaurant.orderPizza){
+//     restaurant.orderPizza('Khong thit', 'Co thit')
+// }
+// restaurant.orderPizza && restaurant.orderPizza('Khong thit', 'Co thit')
 
 
 
