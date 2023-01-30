@@ -38,32 +38,64 @@ const game = {
         team2: 6.5,
     },
 }
+
+
+
+// --------------------LAB 1.2-----------------------
+console.log('-----------LAB 1.2-----------');
 // 1
-const [players1,players2] = game.players
-console.log(players1,players2);
+for (const [id, name] of game.scored.entries()){
+    console.log(`Goal ${(id +1)}: ${name} `)
+}
 // 2
-const [gk1, ...fieldPlayers1] = players1;
-const [gk2, ...fieldPlayers2] = players2;
-console.log(gk1,fieldPlayers1);
+const odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds){
+    average += odd;
+}
+average /= odds.length;
+console.log(average); 
 
 // 3
-const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
-
-// 4
-const players1Final = [...players1,'Thiago', 'Coutinho','Perisic']
-console.log(players1Final);
-// 5
-const {odds: {team1, x:draw , team2 }} = game;
-console.log(team1,draw,team2);
-// 6
-const printGoals = function(...player){
-    console.log(` ${player.length} goals were score !`)
+for(const [team, odd] of Object.entries(game.odds)){
+    const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+    console.log(`Odd of ${teamStr} : ${odd} `);
 }
-printGoals('Lewandowski','Gnarby','Lewandowski','Hummels')
-printGoals('Lewandowski','Hummels')
-printGoals(...game.scored)
-// 7
-// console.log(team1<team2);
-team1 < team2 && console.log('Team1 have lost winner');
-team1 > team2 && console.log('Team2 have lost winner');
+
+
+
+
+
+
+
+// // ---------------------LAB 1.1------------------------
+// console.log('-----------LAB 1.1-----------');
+// // 1
+// const [players1,players2] = game.players
+// console.log(players1,players2);
+// // 2
+// const [gk1, ...fieldPlayers1] = players1;
+// const [gk2, ...fieldPlayers2] = players2;
+// console.log(gk1,fieldPlayers1);
+
+// // 3
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
+
+// // 4
+// const players1Final = [...players1,'Thiago', 'Coutinho','Perisic']
+// console.log(players1Final);
+// // 5
+// const {odds: {team1, x:draw , team2 }} = game;
+// console.log(team1,draw,team2);
+// // 6
+// const printGoals = function(...player){
+//     console.log(` ${player.length} goals were score !`)
+// }
+// printGoals('Lewandowski','Gnarby','Lewandowski','Hummels')
+// printGoals('Lewandowski','Hummels')
+// printGoals(...game.scored)
+// // 7
+// // console.log(team1<team2);
+// team1 < team2 && console.log('Team1 have lost winner');
+// team1 > team2 && console.log('Team2 have lost winner');
