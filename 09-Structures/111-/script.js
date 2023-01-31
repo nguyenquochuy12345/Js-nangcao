@@ -50,33 +50,31 @@ const restaurant = {
 
 };
 
-// Property NAMES
 
-const property = Object.keys(openingHours);
-console.log(property);
+const ordersSet = new Set([
+    'Pasta',
+    'Pizza',
+    'Pizza',
+    'Risotto',
+    'Pasta',
+    'Pizza',
+]);
 
-let openStr = `We are open on ${property.length} days : `;
+console.log(ordersSet);
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Pho');
+ordersSet.add('Bread');
+ordersSet.delete('Bread');
+console.log(ordersSet);
 
-for(const day of property){
-    openStr += `${day}, `;
-}
-console.log(openStr);
+for(const order of ordersSet){console.log(order)}
 
-// Property VALUES
-const values = Object.values(openingHours);
-console.log(values);
+const staff = ['Waiter','Chef','Waiter','Manager','Chef','Waiter'];
+const staffUnique = [...new Set(staff)];
 
-// Entire object
-const entries = Object.entries(openingHours); 
-// console.log(entries);
-
-// [key, value]
-for(const [key , {open , close }] of entries){
-    console.log(`On ${key} we open at ${open} and close at ${close}`);
-}
-
-
-
+console.log(staffUnique);
 
 
 
@@ -88,6 +86,45 @@ for(const [key , {open , close }] of entries){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------------// Property NAMES-----------------------
+
+// const property = Object.keys(openingHours);
+// console.log(property);
+
+// let openStr = `We are open on ${property.length} days : `;
+
+// for(const day of property){
+//     openStr += `${day}, `;
+// }
+// console.log(openStr);
+
+// // Property VALUES
+// const values = Object.values(openingHours);
+// console.log(values);
+
+// // Entire object
+// const entries = Object.entries(openingHours); 
+// // console.log(entries);
+
+// // [key, value]
+// for(const [key , {open , close }] of entries){
+//     console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }
 
 
 
