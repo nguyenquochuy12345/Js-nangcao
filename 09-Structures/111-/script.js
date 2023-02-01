@@ -50,36 +50,34 @@ const restaurant = {
 
 };
 
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, ' Lisbon , Portugal'));
 
-const ordersSet = new Set([
-    'Pasta',
-    'Pizza',
-    'Pizza',
-    'Risotto',
-    'Pasta',
-    'Pizza',
-]);
+rest
+.set('Banh my', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+.set('open', 11)
+.set('close', 23)
+.set(true, 'we are open : D')
+.set(false, 'we are closed : (');
 
-console.log(ordersSet);
-console.log(ordersSet.size);
-console.log(ordersSet.has('Pizza'));
-console.log(ordersSet.has('Bread'));
-ordersSet.add('Pho');
-ordersSet.add('Bread');
-ordersSet.delete('Bread');
-console.log(ordersSet);
+console.log(rest.get('name'));
+console.log(rest.get(true));
 
-for(const order of ordersSet){console.log(order)}
+const time = 8;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close') ));
 
-const staff = ['Waiter','Chef','Waiter','Manager','Chef','Waiter'];
-const staffUnique = [...new Set(staff)];
+console.log(rest.has(rest.has('categories')));
+rest.delete(1);
 
-console.log(staffUnique);
+const arr = [1,2];
+rest.set(arr, 'Test')
+rest.set(document.querySelector('h1'),'heading')
+console.log(rest);
+console.log(rest.size);
 
-
-
-
-
+console.log(rest.get(arr));
 
 
 
@@ -90,6 +88,41 @@ console.log(staffUnique);
 
 
 
+
+
+
+
+
+
+
+
+
+
+// // --------------------------Set-------------------------
+// const ordersSet = new Set([
+//     'Pasta',
+//     'Pizza',
+//     'Pizza',
+//     'Risotto',
+//     'Pasta',
+//     'Pizza',
+// ]);
+
+// console.log(ordersSet);
+// console.log(ordersSet.size);
+// console.log(ordersSet.has('Pizza'));
+// console.log(ordersSet.has('Bread'));
+// ordersSet.add('Pho');
+// ordersSet.add('Bread');
+// ordersSet.delete('Bread');
+// console.log(ordersSet);
+
+// for(const order of ordersSet){console.log(order)}
+
+// const staff = ['Waiter','Chef','Waiter','Manager','Chef','Waiter'];
+// const staffUnique = [...new Set(staff)];
+
+// console.log(staffUnique);
 
 
 
