@@ -50,38 +50,89 @@ const restaurant = {
 
 };
 
-const question = new Map([
-    ['question', 'What is he best programming language in the wordld'],
-    [1 , 'C'],
-    [2 , 'Java'],
-    [3 , 'Javascrip'],
-    ['correct' , 3],
-    [true , 'Correct '],
-    [false , 'Try again!'],
-]);
-console.log(question); 
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
 
-// Convert object to map
-console.log(Object.entries(openingHours));
-const hoursMap = new Map(Object.entries(openingHours));
-console.log(hoursMap);
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
 
-// quiz app
-for(const [key, value] of question){
-        if(typeof key === 'number'){
-            console.log(`Answer ${key}: ${value}`);
-        }
-} 
-// const answer = Number(prompt('Your answer :'));
-const answer = 3;
-console.log(answer);
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('portugal'));
 
-console.log(question.get(question.get('correct') === answer ));
+console.log(airline.slice(4));
+console.log(airline.slice(4,7));
 
-console.log([...question]);
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice( airline.lastIndexOf(' ') + 1));
 
-console.log([...question.keys()]);
-console.log([...question.values()]);
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMidddleSeat = function(seat){
+// B va E la ghe giua
+    const s = seat.slice(-1);
+    if(s === 'B' || s === 'E' ){
+        console.log('You got the middle seat');
+    }else{
+        console.log('You got lucky');
+    }
+}
+
+checkMidddleSeat('11B');
+checkMidddleSeat('23C');
+checkMidddleSeat('3E');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ----------------------Map----------------------------------
+// const question = new Map([
+//     ['question', 'What is he best programming language in the wordld'],
+//     [1 , 'C'],
+//     [2 , 'Java'],
+//     [3 , 'Javascrip'],
+//     ['correct' , 3],
+//     [true , 'Correct '],
+//     [false , 'Try again!'],
+// ]);
+// console.log(question); 
+
+// // Convert object to map
+// console.log(Object.entries(openingHours));
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
+
+// // quiz app
+// for(const [key, value] of question){
+//         if(typeof key === 'number'){
+//             console.log(`Answer ${key}: ${value}`);
+//         }
+// } 
+// // const answer = Number(prompt('Your answer :'));
+// const answer = 3;
+// console.log(answer);
+
+// console.log(question.get(question.get('correct') === answer ));
+
+// console.log([...question]);
+
+// console.log([...question.keys()]);
+// console.log([...question.values()]);
 
 
 
