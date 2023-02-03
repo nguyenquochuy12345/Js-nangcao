@@ -50,56 +50,118 @@ const restaurant = {
 
 };
 
-const passenger = 'jOnAS';
-const passengerLower = passenger.toLowerCase();
-const passengerCorrect = passengerLower[0].toLowerCase() + passengerLower.slice(1);
-console.log(passengerCorrect);
-console.log(passengerCorrect);
+console.log('a+very+nice+string'.split('+'));
+console.log('Jonas Schmedtmann'.split('+'));
 
-// Comaring emails
-const email = 'hello@jonas.io';
-const loginEmail = ' Hello@Jonas.Io \n';
+const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
 
-const lowerEmail = loginEmail.toLowerCase();
-const trimedEmail = lowerEmail.trim();
-console.log(trimedEmail);
+const newName = ['Mr.',firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
 
-const normalizaedEmail = loginEmail.toString().trim();
-console.log(normalizaedEmail);
-console.log(email === normalizaedEmail);
+const captitalizeName = function(name){
+    const names = name.split(' ');
+    const nameUpper = [];
 
-// replaccing
-const priceGB = '288,97$';
-const priceUS = priceGB.replace('$', 'VND').replace(',','.');
-console.log(priceUS);
-
-const announcement = 'All passengers come to boarding door 23. Boarding door 23!';
-console.log(announcement);
-console.log(announcement.replace(/door/g , 'gate'));
-
-// Boolaeans
-const plane = 'Airbus A320neo';
-console.log(plane.includes('320'));
-console.log(plane.includes('Boeing'));
-console.log(plane.includes('Airb'));
-
-if(plane.startsWith('Airbus') && plane.endsWith('neo')){
-    console.log('Part of the New Aribus family');
-}
-
-// Practice exercise 
-const checkBaggage = function (items){
-const baggage = items.toLowerCase();
-    if(baggage.includes('gun') || baggage.includes('knife')){
-        console.log('You are NOT allowed in board');
-    }else{
-        console.log('Welcome aboard!');
+    for(const n of names){
+        // nameUpper.push(n[0].toUpperCase() + n.slice(1) );
+        nameUpper.push(n.replace(n[0], n[0].toUpperCase()));
     }
+    console.log(nameUpper.join(' '));
 };
-checkBaggage('I have a laptop, some Food and a pocket Knife');
-checkBaggage('Socks and camera');
-checkBaggage('Got some snacks and a gun for protection');
 
+captitalizeName('jessica ann smith davis');
+captitalizeName('jonas schmedtmann');
+
+// Padding 
+const message = 'Go to gate 23!';
+console.log(message.padStart(20, '+').padEnd(30, '+'));
+console.log('Jonas'.padStart(20, '+').padEnd(30, '+'));
+
+const maskCreaditCard = function(number){
+    const str = number + '';
+    const last = str.slice(-4);
+    return console.log(last.padStart(str.length, '+'));
+
+}
+maskCreaditCard(24578632);
+maskCreaditCard(212312314578632);
+maskCreaditCard('4564865453132345666');``
+
+// Repeat
+const message2 = 'Bad waether... All Departues Delayed...';
+console.log(message2.repeat(5));
+
+const planesInLine = function(n) {
+    console.log(`There are ${n} planes in line ${'Fly'.repeat(n)}`);
+}
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -------------122. Working With Strings - Part 2--------------
+// const passenger = 'jOnAS';
+// const passengerLower = passenger.toLowerCase();
+// const passengerCorrect = passengerLower[0].toLowerCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
+// console.log(passengerCorrect);
+
+// // Comaring emails
+// const email = 'hello@jonas.io';
+// const loginEmail = ' Hello@Jonas.Io \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimedEmail = lowerEmail.trim();
+// console.log(trimedEmail);
+
+// const normalizaedEmail = loginEmail.toString().trim();
+// console.log(normalizaedEmail);
+// console.log(email === normalizaedEmail);
+
+// // replaccing
+// const priceGB = '288,97$';
+// const priceUS = priceGB.replace('$', 'VND').replace(',','.');
+// console.log(priceUS);
+
+// const announcement = 'All passengers come to boarding door 23. Boarding door 23!';
+// console.log(announcement);
+// console.log(announcement.replace(/door/g , 'gate'));
+
+// // Boolaeans
+// const plane = 'Airbus A320neo';
+// console.log(plane.includes('320'));
+// console.log(plane.includes('Boeing'));
+// console.log(plane.includes('Airb'));
+
+// if(plane.startsWith('Airbus') && plane.endsWith('neo')){
+//     console.log('Part of the New Aribus family');
+// }
+
+// // Practice exercise 
+// const checkBaggage = function (items){
+// const baggage = items.toLowerCase();
+//     if(baggage.includes('gun') || baggage.includes('knife')){
+//         console.log('You are NOT allowed in board');
+//     }else{
+//         console.log('Welcome aboard!');
+//     }
+// };
+// checkBaggage('I have a laptop, some Food and a pocket Knife');
+// checkBaggage('Socks and camera');
+// checkBaggage('Got some snacks and a gun for protection');
 
 
 
