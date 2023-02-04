@@ -53,20 +53,51 @@ const gameEvents = new Map([
     [92, 'Yellow card'],
 ]);
 
-// 1
-const events = [...new Set(gameEvents.values())];
-console.log(events);
-// 2
-gameEvents.delete(64);
-console.log(gameEvents);
-// 3
-const lastTime = [...gameEvents.keys()].pop();
-console.log(`1 sự kiện xảy ra, trung bình mỗi ${lastTime / gameEvents.size}  phút`);
-// 4
-for(const [min,events] of gameEvents){
-    const half = min <= 45 ? 'FIRST' : 'LAST'
-    console.log(`[${half} HALF] ${min}: ${events}`);
-}
+
+// ---------------------------LAB2.2-------------------------
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+    const text = document.querySelector('textarea').value;
+    const rows = text.split('\n');
+
+    console.log(rows);
+    
+    for (const [i , row ] of rows.entries()) {
+
+        const [frist, second] = row.toLowerCase().trim().split('_');
+
+
+        const output = `${frist}${second.replace(
+            second[0],
+            second[0].toUpperCase()
+        )}`
+        console.log(`${output.padEnd(20)}${'^'.repeat(i + 1)}`);
+    }
+})
+
+
+
+
+
+
+
+// ---------------------------LAB2.1-------------------------
+// // 1
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
+// // 2
+// gameEvents.delete(64);
+// console.log(gameEvents);
+// // 3
+// const lastTime = [...gameEvents.keys()].pop();
+// console.log(`1 sự kiện xảy ra, trung bình mỗi ${lastTime / gameEvents.size}  phút`);
+// // 4
+// for(const [min,events] of gameEvents){
+//     const half = min <= 45 ? 'FIRST' : 'LAST'
+//     console.log(`[${half} HALF] ${min}: ${events}`);
+// }
 
 
 
