@@ -51,17 +51,36 @@ const restaurant = {
 };
 
 
-const flights = 
-'_Delayed_Departure;fao5646565;txl5465456456;11:25+_Jsjslk;bru56465456;fao4545545;11:45+_Jsjslk;hel56465456;fao4545545;12:05+_Jsjslk;fao56465456;lis4545545;12:30';
 
-const getCode = str => str.toUpperCase().slice(0,3);
 
-for(const flight of flights.split('+')){
-    const [type , from , to , time] = flight.split(';');
-    const output = `${type.startsWith('_Delayed') ? '<>' : ''} ${type.replaceAll('_',' ')} ${getCode(from)} ${getCode(to)} (${time.replace(':', 'h')})`.padStart(38);
 
-    console.log(output);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ---------------------125. String Methods Practice----------------
+// const flights = 
+// '_Delayed_Departure;fao5646565;txl5465456456;11:25+_Jsjslk;bru56465456;fao4545545;11:45+_Jsjslk;hel56465456;fao4545545;12:05+_Jsjslk;fao56465456;lis4545545;12:30';
+
+// const getCode = str => str.toUpperCase().slice(0,3);
+
+// for(const flight of flights.split('+')){
+//     const [type , from , to , time] = flight.split(';');
+//     const output = `${type.startsWith('_Delayed') ? '<>' : ''} ${type.replaceAll('_',' ')} ${getCode(from)} ${getCode(to)} (${time.replace(':', 'h')})`.padStart(38);
+
+//     console.log(output);
+// }
 
 
 
