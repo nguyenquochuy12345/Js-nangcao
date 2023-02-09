@@ -62,31 +62,54 @@
 
 
 
-// // ---------------129. Default Parameters-------------
+// // ---------------131. Functions Accepting Callback Functions-------------
 
-const oneWord = function(str){
-    return str.replace(/ /g, '').toLowerCase();
-};
+// const oneWord = function(str){
+//     return str.replace(/ /g, '').toLowerCase();
+// };
 
-const upperFirstWord = function (str){
-    const [first, ...others] = str.split(' ');
-    return [first.toUpperCase(), ...others].join(' ');
-};
+// const upperFirstWord = function (str){
+//     const [first, ...others] = str.split(' ');
+//     return [first.toUpperCase(), ...others].join(' ');
+// };
 
-// Higher-order function
-const transformer = function (str , fn) {
-    console.log(`Original string : ${str}`);
-    console.log(`Transformed string : ${fn(str)}`);
+// // Higher-order function
+// const transformer = function (str , fn) {
+//     console.log(`Original string : ${str}`);
+//     console.log(`Transformed string : ${fn(str)}`);
     
-    console.log(`Transformed by: ${fn.name}`);
-};
+//     console.log(`Transformed by: ${fn.name}`);
+// };
 
-transformer('JavaScript is the  best !', upperFirstWord);
+// transformer('JavaScript is the  best !', upperFirstWord);
 
-// JS uses callbacks all the time 
-const high5 = function () {
-    console.log('hello');
-};
+// // JS uses callbacks all the time 
+// const high5 = function () {
+//     console.log('hello');
+// };
 
-document.body.addEventListener('click', high5);
-['Jonas', 'Martha' , 'Adam'].forEach(high5);
+// document.body.addEventListener('click', high5);
+// ['Jonas', 'Martha' , 'Adam'].forEach(high5);
+
+
+
+
+// // // ---------------132. Functions Returning Functions-------------
+
+
+const greet = function(greeting){
+    return function(name){
+        console.log(`${greeting} ${name}`);
+    }
+}
+
+const greeterHey = greet('Hey');
+greeterHey('Jonas');
+greeterHey('Steven');
+
+greet('Hello')('Jonas');
+
+// Challenge
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+greetArr('Hey')('Jonas');
+
