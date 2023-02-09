@@ -94,22 +94,44 @@
 
 
 
-// // // ---------------132. Functions Returning Functions-------------
+// // ---------------132. Functions Returning Functions-------------
 
 
-const greet = function(greeting){
-    return function(name){
-        console.log(`${greeting} ${name}`);
-    }
-}
+// const greet = function(greeting){
+//     return function(name){
+//         console.log(`${greeting} ${name}`);
+//     }
+// }
 
-const greeterHey = greet('Hey');
-greeterHey('Jonas');
-greeterHey('Steven');
+// const greeterHey = greet('Hey');
+// greeterHey('Jonas');
+// greeterHey('Steven');
 
-greet('Hello')('Jonas');
+// greet('Hello')('Jonas');
 
-// Challenge
-const greetArr = greeting => name => console.log(`${greeting} ${name}`);
-greetArr('Hey')('Jonas');
+// // Challenge
+// const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+// greetArr('Hey')('Jonas');
 
+
+
+
+
+
+
+// // ---------------132. Functions Returning Functions-------------
+
+
+const runOnce = function(){
+    console.log('This will never run again');
+
+};
+runOnce();
+
+// IIFE
+(function () {
+    console.log('This will never run again');
+    // var isPrivate = 20;
+})();
+   
+(() => console.log('This will ALSD never run again'))(); 
