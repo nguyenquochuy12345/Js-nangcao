@@ -77,7 +77,7 @@
 // const transformer = function (str , fn) {
 //     console.log(`Original string : ${str}`);
 //     console.log(`Transformed string : ${fn(str)}`);
-    
+
 //     console.log(`Transformed by: ${fn.name}`);
 // };
 
@@ -119,19 +119,31 @@
 
 
 
-// // ---------------132. Functions Returning Functions-------------
+// // // ---------------136. Immediately Invoked Function Expressions (IIFE)-------------
 
 
-const runOnce = function(){
-    console.log('This will never run again');
+// const runOnce = function(){
+//     console.log('This will never run again');
 
-};
-runOnce();
+// };
+// runOnce();
 
-// IIFE
+// // IIFE
+// (function () {
+//     console.log('This will never run again');
+//     // var isPrivate = 20;
+// })();
+
+// (() => console.log('This will ALSD never run again'))(); 
+
+
+
+// //---------------139. Coding Challenge #2-------------
+
 (function () {
-    console.log('This will never run again');
-    // var isPrivate = 20;
+    const header = document.querySelector('h1');
+    header.style.color = 'red';
+    document.querySelector('body').addEventListener('click', function () {
+        header.style.color = 'blue';
+    });
 })();
-   
-(() => console.log('This will ALSD never run again'))(); 
